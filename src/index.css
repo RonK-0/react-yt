@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    html{
+        @apply overflow-x-hidden;
+    }
+    body{
+        @apply overflow-x-hidden;
+    }
+    input,textarea, button{
+        @apply outline-none focus:outline-none;
+    }
+}
+
+@layer components{
+    .custom-scroll{
+        scrollbar-color: #141414;
+        scrolbar-width: thin;
+    }
+    /* width */
+    .custom-scroll::-webkit-scrollbar {
+        @apply w-2;
+    }
+    /* Track */
+    .custom-scroll::-webkit-scrollbar-track {
+        @apply bg-[#141414];
+    }
+    /* Handle */
+    .custom-scroll::-webkit-scrollbar-thumb {
+        @apply bg-[#333] hover:bg-white;
+    }
+
+
+    .header{
+
+    }
+
+    .footer{
+        
+    }
+
+
+}
+
+@layer utilities{
+    .f-col{ @apply flex flex-col; }
+    .f-col-center{ @apply flex flex-col items-center justify-center; }
+    .center {@apply items-center justify-center; }
+    .between-center {@apply justify-between items-center; }
+    .between-end {@apply justify-between items-end; }
+
+    .ft-el{ @apply font-extralight }
+    .ft-lt{ @apply font-light }
+    .ft-nm{ @apply font-normal }
+    .ft-md{ @apply font-medium }
+    .ft-sb{ @apply font-semibold }
+    .ft-b{ @apply font-bold }
+    .ft-ex{ @apply font-extrabold }
+
+    .mx-a{ @apply mx-auto }
+
+    .tx-a{ @apply left-1/2 -translate-x-1/2 }
+    .ty-a{ @apply top-1/2 -translate-y-1/2 }
+    .txy-a{ @apply top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 }
+
+    .pointer{ @apply cursor-pointer; }
+}

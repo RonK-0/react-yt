@@ -4,7 +4,7 @@ import { baseImgUrl } from '../helpers/functions-general'
 const Header = () => {
   return (
     <>
-      <header className='header'>
+      <header className='header flex '>
 
       </header>
     </>
