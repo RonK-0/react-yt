@@ -11,14 +11,27 @@ export default {
         // 'lg': '1024px',
         // 'xl': '1280px',
         // '2xl': '1536px',
+        'sm': '640px',
+        // 'md': '800px',
+        '3xl': '1750px',
+        '4xl': '2050px',
       },
       colors:{
         // dark: "#0D0D0D",
-        accent: "rgb(229, 9, 20)",
-        accent_hover: "rgb(193,17,25)",
-        btdark: "rgb(22, 22, 22)",
-        dark: "#141414",
+        dark_bg: "#0f0f0f",
+        light_bg: "#f1f1f1",
+        menu_hover: "#272727",
+        raised_bg: "#212121",
+        text_primary: "#fff",
+        text_secondary: "#aaa",
+        text_disabled: "#717171",
+        outline: "#303030",
 
+        searchBox_focus: "#3ea6ff",
+        hover_bg: "#3d3d3d",
+        
+        yt_text_primary: "#f1f1f1",
+        yt_text_primary_inverse: "#0f0f0f",
       },
       backgroundImage:{
         // transparent_bg: "url('../dist/img/transparent.png')",
@@ -39,7 +52,8 @@ export default {
       },
       fontFamily: {
         // 'text-inter': ["Inter", "sans-serif"],
-        'text-netflix': ["Netflix Sans", "sans-serif"],
+        'text-youtube': ["YouTube Sans", "Arial", "sans-serif"],
+        'text-roboto': ["Roboto", "Arial", "sans-serif"],
       },
       fontSize: {
         // 'button' : 'clamp(16px, 1vw, 24px) !important',
@@ -88,6 +102,8 @@ export default {
       width:{
         // 'bannerSlider_card_bg' : 'calc(100% + calc(1.5 * calc(1.5rem * 0.5)))',
         // 'tel_icon' : 'clamp(24px, 10vw, 38px)',
+        15: "60px",
+        18: "72px"
       },
       height:{
         // 'insidePageBanner' : 'clamp(350px, 26.042vw, 600px)',

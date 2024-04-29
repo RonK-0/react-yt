@@ -3,44 +3,112 @@
 @tailwind utilities;
 
 @layer base{
-    html{
-        @apply overflow-x-hidden;
+    html, body{
+        @apply scroll-smooth;
     }
     body{
-        @apply overflow-x-hidden;
+        @apply overflow-x-hidden bg-dark_bg text-text_primary font-text-roboto;
     }
     input,textarea, button{
         @apply outline-none focus:outline-none;
     }
+
+    @font-face {
+        font-family: "Roboto";
+        src: url(./fonts/roboto/roboto-Regular.ttf) format("ttf");
+    }
+    @font-face {
+        font-family: "Roboto Bold";
+        src: url(../fonts/roboto/roboto-Bold.ttf) format("ttf");
+    }
+    @font-face {
+        font-family: "YouTube Sans Regular";
+        src: url(./fonts/youtube-sans/YouTubeSansRegular.otf) format("otf");
+    }
+    @font-face {
+        font-family: "YouTube Sans Bold";
+        src: url(./fonts/youtube-sans/YouTubeSansBold.otf) format("otf");
+    }
 }
 
 @layer components{
-    .custom-scroll{
-        scrollbar-color: #141414;
-        scrolbar-width: thin;
+    /* Scrollbar Width */
+    body::-webkit-scrollbar, .custom-scroll_a::-webkit-scrollbar {
+        @apply w-3 transition-all duration-500;
     }
-    /* width */
-    .custom-scroll::-webkit-scrollbar {
-        @apply w-2;
+    /* Scrollbar Track */
+    body::-webkit-scrollbar-track, .custom-scroll_a::-webkit-scrollbar-track {
+        @apply bg-dark_bg transition-all duration-500;
     }
-    /* Track */
-    .custom-scroll::-webkit-scrollbar-track {
-        @apply bg-[#141414];
+    /* Scrollbar Handle */
+    body::-webkit-scrollbar-thumb, .custom-scroll_a::-webkit-scrollbar-thumb {
+        @apply bg-text_secondary;
     }
-    /* Handle */
-    .custom-scroll::-webkit-scrollbar-thumb {
-        @apply bg-[#333] hover:bg-white;
+    /* Scrollbar Buttons */
+    body::-webkit-scrollbar-button:single-button, .custom-scroll_a::-webkit-scrollbar-button:single-button {
+        @apply hidden;
+    }
+    /* Scrollbar Width */
+    .custom-scroll_b::-webkit-scrollbar {
+        @apply w-2 transition-all duration-500;
+    }
+    /* Scrollbar Track */
+    .custom-scroll_b::-webkit-scrollbar-track {
+        @apply bg-dark_bg transition-all duration-500;
+    }
+    /* Scrollbar Handle */
+    .custom-scroll_b::-webkit-scrollbar-thumb {
+        @apply bg-text_secondary;
+    }
+    /* Scrollbar Buttons */
+    .custom-scroll_b::-webkit-scrollbar-button:single-button {
+        @apply hidden;
     }
 
 
     .header{
-
+        .searchBox input:focus ~ .hidden-search-icon{
+            @apply -order-1 block;
+        }
+        .searchBox:has(input:focus){
+            @apply ml-0  w-[calc(100%+32px)] ;
+        }
+        .box:has(input:focus){ @apply border-searchBox_focus; }
+        svg{ @apply fill-light_bg; }
     }
 
     .footer{
-        
+        div>small{
+            @apply text-text_secondary ft-md mb-[-1px];
+        }
+        small.copyright{
+            @apply text-text_disabled;
+        }
     }
 
+    .sidebar-collapsed button{
+        @apply w-16 pt-4 pb-[14px] rounded-lg
+        text-center f-col-center gap-[5px]
+        bg-transparent hover:bg-menu_hover;
+        svg{ @apply fill-light_bg w-6 h-6; }
+        small{ @apply text-[10px] text-text_primary; }
+    }
+    .sidebar-expanded{
+        svg { @apply fill-light_bg; }
+        .sidebar-links{
+            @apply px-3 py-2.5 border-b border-text_secondary/40;
+            h3{ @apply px-3.5 my-1.5 ft-md; }
+            .sidebar-link-item{
+                @apply flex items-center gap-6 rounded-xl bg-transparent hover:bg-menu_hover w-full px-3.5 py-2;
+                svg{ @apply w-6 h-6; }
+                p{ @apply text-sm leading-none m-0; }
+            }
+            .sidebar-link-item.active{
+                @apply bg-menu_hover;
+            }
+        }
+        .sidebar-links:last-child{ @apply !border-transparent; }
+    }
 
 }
 
