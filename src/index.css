@@ -2,7 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base{
+    :root{
+        --dark_bg: 241, 241, 241;
+        --light_bg: 50, 50, 50;
+        --dark2: 225, 225, 225;
+        --menu_hover: 220, 220, 220;
+        --raised_bg: 230, 230, 230;
+        --text_primary: 0, 0, 0;
+        --text_secondary: 80, 80, 80;
+        --outline: 210, 210, 210;
+    
+        --text_disabled: 113, 113, 113;
+        --searchBox_focus: 62, 166, 255;
+        --hover_bg: 200, 200, 200;
+    }
+    .dark{
+        --dark_bg: 15, 15, 15;
+        --light_bg: 241, 241, 241;
+        --menu_hover: 39, 39, 39;
+        --raised_bg: 33, 33, 33;
+        --dark2: 18, 18, 18;
+        --text_primary: 255, 255, 255;
+        --text_secondary: 170, 170, 170;
+        --outline: 48, 48, 48;
+    
+        --text_disabled: 113, 113, 113;
+        --searchBox_focus: 62, 166, 255;
+        --hover_bg: 61, 61, 61;
+    }
+
     html, body{
         @apply scroll-smooth;
     }
@@ -42,7 +73,7 @@
     }
     /* Scrollbar Handle */
     body::-webkit-scrollbar-thumb {
-        @apply bg-text_secondary rounded-sm bg-clip-content border-solid border-y-2 border-x-2 border-transparent hover:bg-light_bg/80;
+        @apply bg-text_secondary rounded-sm bg-clip-content border-solid border-y-2 border-x-2 border-transparent hover:bg-light_bg hover:opacity-80;
     }
     /* Scrollbar Buttons */
     body::-webkit-scrollbar-button:single-button {
@@ -114,7 +145,7 @@
     .sidebar-expanded{
         svg { @apply fill-light_bg; }
         .sidebar-links{
-            @apply px-3 py-2.5 border-b border-text_secondary/40;
+            @apply px-3 py-2.5 border-b border-text_secondary border-opacity-40;
             h3{ @apply ft-md text-base; }
             .sidebar-link-item{
                 @apply flex items-center gap-6 rounded-xl bg-transparent hover:bg-menu_hover w-full px-3.5 py-2;
@@ -136,9 +167,9 @@
             .slick-arrow{
                 @apply h-6 w-6 f-col-center z-[110]
                 opacity-80 hover:opacity-100 hover:rounded-full
-                bg-dark_bg hover:bg-menu_hover
+                bg-dark_bg hover:bg-menu_hover text-light_bg
                 transition-all duration-200 before:hidden;
-                svg{ @apply h-fit text-white text-2xl; }
+                svg{ @apply h-fit text-light_bg text-2xl; }
             }
             .slick-next{
                 @apply shadow-category_slider_right
@@ -152,8 +183,8 @@
                     @apply flex gap-3 items-center pointer-events-none *:pointer-events-auto;
                     .slick-slide{
                         button{
-                            @apply bg-menu_hover hover:bg-outline
-                            text-white hover:brightness-150
+                            @apply bg-raised_bg hover:bg-outline
+                            text-light_bg
                             rounded-lg px-3 py-2.5 text-sm select-none
                             transition-all duration-500 leading-none;
                         }
@@ -193,4 +224,9 @@
     .txy-a{ @apply top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 }
 
     .pointer{ @apply cursor-pointer; }
+
+    .scrollbar-gutter{
+        scrollbar-width: thin;
+        scrollbar-gutter: stable;
+    }
 }

@@ -5,6 +5,15 @@ import user from '../../../public/img/global_icons/user.jpg'
 
 const Header = ({setShowSideBar, showSideBar}) => {
   const handleSideBarShow = () => setShowSideBar(!showSideBar);
+  // const [theme, setTheme] = React.useState(null);
+  const handleToggleThemeMode = ()=>{
+    if(document.querySelector('body').classList.contains('dark')){
+      document.querySelector('body').classList.remove('dark');
+    }else{
+      document.querySelector('body').classList.add('dark')
+    }
+  }  
+  
   return (
     <>
       <header className='header flex between-center h-14 pl-6 pr-8 fixed top-0 left-0 w-full z-[100] bg-dark_bg'>
@@ -34,7 +43,7 @@ const Header = ({setShowSideBar, showSideBar}) => {
           </div>
         </div>
         <div className='searchBox_parent flex betweeen-center gap-4 w-1/2 md:w-[54.5%] xl:w-[35%] 2xl:w-[37.5%]'>
-          <div className='searchBox relative bg-[#121212] rounded-full min-h-10 max-h-10 w-full h-full py-2 flex items-center ml-8 border border-outline'>
+          <div className='searchBox relative bg-dark2 rounded-full min-h-10 max-h-10 w-full h-full py-2 flex items-center ml-8 border border-outline'>
             <div className="box border border-transparent flex items-center rounded-tl-full rounded-bl-full pl-[14px] w-full">
               {/* Input Search Box */}
               <input type="text" name="Search" id="searchBox" placeholder='Search' className='bg-transparent leading-none h-10 w-full caret-text_primary pointer-events-auto text-light_bg placeholder:text-[#888] focus:pl-[2px]' />
@@ -44,12 +53,12 @@ const Header = ({setShowSideBar, showSideBar}) => {
             </div>
 
             {/* Search button */}
-            <button type="button" className='bg-raised_bg hover:bg-[#3d3d3d] rounded-tr-full rounded-br-full w-full max-w-16 h-10 f-col-center'>
+            <button type="button" className='bg-raised_bg hover:bg-hover_bg rounded-tr-full rounded-br-full w-full max-w-16 h-10 f-col-center'>
               <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" className='w-6 h-6'><path d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path></svg>
             </button>
           </div>
           {/* Mic button */}
-          <button className='rounded-full min-w-10 min-h-10 flex center bg-raised_bg hover:bg-[#3d3d3d]'>
+          <button className='rounded-full min-w-10 min-h-10 flex center bg-raised_bg hover:bg-hover_bg'>
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"><path d="M12 3c-1.66 0-3 1.37-3 3.07v5.86c0 1.7 1.34 3.07 3 3.07s3-1.37 3-3.07V6.07C15 4.37 13.66 3 12 3zm6.5 9h-1c0 3.03-2.47 5.5-5.5 5.5S6.5 15.03 6.5 12h-1c0 3.24 2.39 5.93 5.5 6.41V21h2v-2.59c3.11-.48 5.5-3.17 5.5-6.41z"></path></svg>
           </button>
         </div>
@@ -60,7 +69,7 @@ const Header = ({setShowSideBar, showSideBar}) => {
               <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" className='h-6 w-6'><path d="M14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2zm3-7H3v12h14v-6.39l4 1.83V8.56l-4 1.83V6m1-1v3.83L22 7v8l-4-1.83V19H2V5h16z"></path></svg>
             </button>
             {/* NOTIFICATIONS BUTTON */}
-            <button className='w-8 h-8 rounded-full bg-transparent hover:bg-hover_bg overflow-hidden hidden md:f-col-center'>
+            <button className='w-8 h-8 rounded-full bg-transparent hover:bg-hover_bg overflow-hidden hidden md:f-col-center' onClick={handleToggleThemeMode}>
               <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" className='h-6 w-6'><path d="M10 20h4c0 1.1-.9 2-2 2s-2-.9-2-2zm10-2.65V19H4v-1.65l2-1.88v-5.15C6 7.4 7.56 5.1 10 4.34v-.38c0-1.42 1.49-2.5 2.99-1.76.65.32 1.01 1.03 1.01 1.76v.39c2.44.75 4 3.06 4 5.98v5.15l2 1.87zm-1 .42-2-1.88v-5.47c0-2.47-1.19-4.36-3.13-5.1-1.26-.53-2.64-.5-3.84.03C8.15 6.11 7 7.99 7 10.42v5.47l-2 1.88V18h14v-.23z"></path></svg>
             </button>
           </div>
