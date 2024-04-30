@@ -49,7 +49,9 @@ const Sidebar_Expanded = ({setShowSideBar, showSideBar}) => {
                     </button>
                 </div>
                 <div className='sidebar-links'>
-                    <h3 className='flex items-center gap-2'>You <PiCaretRightBold /></h3>
+                    <button className="sidebar-link-item">
+                        <h3 className='flex items-center gap-2'>You <PiCaretRightBold /></h3>
+                    </button>
                     <button className="sidebar-link-item">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"><g><path d="M14.97 16.95 10 13.87V7h2v5.76l4.03 2.49-1.06 1.7zM22 12c0 5.51-4.49 10-10 10S2 17.51 2 12h1c0 4.96 4.04 9 9 9s9-4.04 9-9-4.04-9-9-9C8.81 3 5.92 4.64 4.28 7.38c-.11.18-.22.37-.31.56L3.94 8H8v1H1.96V3h1v4.74c.04-.09.07-.17.11-.25.11-.22.23-.42.35-.63C5.22 3.86 8.51 2 12 2c5.51 0 10 4.49 10 10z"></path></g></svg>
                         <p>History</p>
@@ -68,7 +70,9 @@ const Sidebar_Expanded = ({setShowSideBar, showSideBar}) => {
                     </button>
                 </div>
                 <div className='sidebar-links'>
-                    <h3 className='flex items-center gap-2'>Explore</h3>
+                    <button className="sidebar-link-item">
+                        <h3 className='flex items-center gap-2'>Explore</h3>
+                    </button>
                     <button className="sidebar-link-item">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"><path d="M19 3.87v9.77C19 17.7 15.86 21 12 21s-7-3.3-7-7.37v-.13c0-1.06.22-2.13.62-3.09.5-1.19 1.29-2.21 2.27-2.97.85-.66 1.83-1.14 2.87-1.65.39-.19.77-.38 1.15-.58.36-.19.72-.38 1.08-.56v3.22l1.55-1.04L19 3.87M20 2l-6 4V3c-.85.44-1.7.88-2.55 1.33-1.41.74-2.9 1.34-4.17 2.32-1.13.87-2.02 2.05-2.58 3.37-.46 1.09-.7 2.29-.7 3.48v.14C4 18.26 7.58 22 12 22s8-3.74 8-8.36V2zM9.45 12.89 14 10v5.7c0 1.82-1.34 3.3-3 3.3s-3-1.47-3-3.3c0-1.19.58-2.23 1.45-2.81z"></path></svg>
                         <p>Trending</p>
@@ -99,7 +103,9 @@ const Sidebar_Expanded = ({setShowSideBar, showSideBar}) => {
                     </button>
                 </div>
                 <div className='sidebar-links'>
-                    <h3 className='flex items-center gap-2'>Explore</h3>
+                    <button className="sidebar-link-item">
+                        <h3 className='flex items-center gap-2'>More from YouTube</h3>
+                    </button>
                     <button className="sidebar-link-item">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
                             <defs>

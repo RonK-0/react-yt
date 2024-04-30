@@ -9,6 +9,19 @@ const HomeVideoCards = () => {
             {videos_list.map((item,key) => (
                 <YTVideoCard video={item} key={key}/>
             ))}
+            {videos_list.map((item,key) => (
+                <YTVideoCard video={item} key={key}/>
+            ))}
+            {videos_list.map((item,key) => (
+                <YTVideoCard video={item} key={key}/>
+            ))}
+            {videos_list.map((item,key) => (
+                <YTVideoCard video={item} key={key}/>
+            ))}
+            {videos_list.map((item,key) => (
+                <YTVideoCard video={item} key={key}/>
+            ))}
+
             {/* RANDOM SORT OF VIDEOS BUT BROKEN AS IT REFRESHES THE OTHER ON ANY BUTTON CLICK */}
             {/* {videos_list.sort(() => Math.random() - 0.5).map((item,key) => ( <YTVideoCard video={item} key={key}/> ))} */}
         </div>

@@ -115,7 +115,7 @@
         svg { @apply fill-light_bg; }
         .sidebar-links{
             @apply px-3 py-2.5 border-b border-text_secondary/40;
-            h3{ @apply px-3.5 my-1.5 ft-md; }
+            h3{ @apply ft-md text-base; }
             .sidebar-link-item{
                 @apply flex items-center gap-6 rounded-xl bg-transparent hover:bg-menu_hover w-full px-3.5 py-2;
                 svg{ @apply w-6 h-6; }
@@ -137,7 +137,7 @@
                 @apply h-6 w-6 f-col-center z-[110]
                 opacity-80 hover:opacity-100 hover:rounded-full
                 bg-dark_bg hover:bg-menu_hover
-                transition-all duration-700 before:hidden;
+                transition-all duration-200 before:hidden;
                 svg{ @apply h-fit text-white text-2xl; }
             }
             .slick-next{
@@ -154,11 +154,11 @@
                         button{
                             @apply bg-menu_hover hover:bg-outline
                             text-white hover:brightness-150
-                            rounded-lg px-3 py-1.5 text-sm select-none
-                            transition-all duration-500;
+                            rounded-lg px-3 py-2.5 text-sm select-none
+                            transition-all duration-500 leading-none;
                         }
                         button.active{
-                            @apply bg-light_bg text-dark_bg font-medium;
+                            @apply bg-light_bg text-dark_bg font-semibold;
                         }
                     }
                 }
