@@ -33,36 +33,54 @@
 
 @layer components{
     /* Scrollbar Width */
-    body::-webkit-scrollbar, .custom-scroll_a::-webkit-scrollbar {
-        @apply w-3 transition-all duration-500;
+    body::-webkit-scrollbar {
+        @apply w-[15px];
     }
     /* Scrollbar Track */
-    body::-webkit-scrollbar-track, .custom-scroll_a::-webkit-scrollbar-track {
-        @apply bg-dark_bg transition-all duration-500;
+    body::-webkit-scrollbar-track {
+        @apply bg-dark_bg;
     }
     /* Scrollbar Handle */
-    body::-webkit-scrollbar-thumb, .custom-scroll_a::-webkit-scrollbar-thumb {
-        @apply bg-text_secondary;
+    body::-webkit-scrollbar-thumb {
+        @apply bg-text_secondary rounded-sm bg-clip-content border-solid border-y-2 border-x-2 border-transparent hover:bg-light_bg/80;
     }
     /* Scrollbar Buttons */
-    body::-webkit-scrollbar-button:single-button, .custom-scroll_a::-webkit-scrollbar-button:single-button {
-        @apply hidden;
+    body::-webkit-scrollbar-button:single-button {
+        @apply block bg-dark_bg h-[15px] bg-clip-content bg-contain bg-no-repeat bg-center;
     }
+    body::-webkit-scrollbar-button:single-button:vertical:decrement {
+        @apply bg-up_arrow hover:bg-up_arrow_alt;
+    }
+    body::-webkit-scrollbar-button:single-button:vertical:increment {
+        @apply bg-down_arrow hover:bg-down_arrow_alt;
+    }
+    
     /* Scrollbar Width */
     .custom-scroll_b::-webkit-scrollbar {
-        @apply w-2 transition-all duration-500;
+        @apply w-0 lg:w-[7px];
     }
     /* Scrollbar Track */
     .custom-scroll_b::-webkit-scrollbar-track {
-        @apply bg-dark_bg transition-all duration-500;
+        @apply bg-dark_bg;
     }
     /* Scrollbar Handle */
     .custom-scroll_b::-webkit-scrollbar-thumb {
+        @apply bg-transparent rounded-lg;
+    }
+    /* Scrollbar Handle appears on hover */
+    .custom-scroll_b:hover::-webkit-scrollbar-thumb{
         @apply bg-text_secondary;
     }
     /* Scrollbar Buttons */
     .custom-scroll_b::-webkit-scrollbar-button:single-button {
-        @apply hidden;
+        @apply block bg-dark_bg w-[7px] h-[15px]
+        bg-clip-content bg-contain bg-no-repeat bg-center bg-none;
+    }
+    .custom-scroll_b:hover::-webkit-scrollbar-button:single-button:vertical:decrement {
+        @apply bg-up_arrow hover:bg-up_arrow_alt;
+    }
+    .custom-scroll_b:hover::-webkit-scrollbar-button:single-button:vertical:increment {
+        @apply bg-down_arrow hover:bg-down_arrow_alt;
     }
 
 
@@ -108,6 +126,47 @@
             }
         }
         .sidebar-links:last-child{ @apply !border-transparent; }
+    }
+
+    .video_category_parent{
+        .slick-slider, .video_category{
+            @apply mx-5;
+            .slick-dots{ @apply hidden; }
+            
+            .slick-arrow{
+                @apply h-6 w-6 f-col-center z-[110]
+                opacity-80 hover:opacity-100 hover:rounded-full
+                bg-dark_bg hover:bg-menu_hover
+                transition-all duration-700 before:hidden;
+                svg{ @apply h-fit text-white text-2xl; }
+            }
+            .slick-next{
+                @apply shadow-category_slider_right
+            }
+            .slick-prev{
+                @apply shadow-category_slider_left;
+            }
+            
+            .slick-list{ @apply mx-6;
+                .slick-track{
+                    @apply flex gap-3 items-center pointer-events-none *:pointer-events-auto;
+                    .slick-slide{
+                        button{
+                            @apply bg-menu_hover hover:bg-outline
+                            text-white hover:brightness-150
+                            rounded-lg px-3 py-1.5 text-sm select-none
+                            transition-all duration-500;
+                        }
+                        button.active{
+                            @apply bg-light_bg text-dark_bg font-medium;
+                        }
+                    }
+                }
+            }
+        }
+        .slick-slider:hover .slick-arrow{
+            @apply shadow-none bg-transparent hover:bg-menu_hover;
+        }
     }
 
 }

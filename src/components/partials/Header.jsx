@@ -7,7 +7,7 @@ const Header = ({setShowSideBar, showSideBar}) => {
   const handleSideBarShow = () => setShowSideBar(!showSideBar);
   return (
     <>
-      <header className='header flex between-center h-14 pl-6 pr-8 fixed top-0 left-0 w-full z-[9999] bg-dark_bg'>
+      <header className='header flex between-center h-14 pl-6 pr-8 fixed top-0 left-0 w-full z-[100] bg-dark_bg'>
         <div className='flex items-center gap-6 h-full'>
           <button type='button' onClick={handleSideBarShow}><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false"><path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path></svg></button>
           <div className='flex items-center relative'>
@@ -54,16 +54,19 @@ const Header = ({setShowSideBar, showSideBar}) => {
         </div>
         <div className='flex justify-end items-center gap-6'>
           <div className='flex items-center gap-4'>
-            <button className='w-8 h-8 rounded-full bg-transparent hover:bg-hover_bg overflow-hidden f-col-center'>
+            {/* CREATE BUTTON */}
+            <button className='w-8 h-8 rounded-full bg-transparent hover:bg-hover_bg overflow-hidden hidden md:f-col-center'>
               <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" className='h-6 w-6'><path d="M14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2zm3-7H3v12h14v-6.39l4 1.83V8.56l-4 1.83V6m1-1v3.83L22 7v8l-4-1.83V19H2V5h16z"></path></svg>
             </button>
-            <button className='w-8 h-8 rounded-full bg-transparent hover:bg-hover_bg overflow-hidden f-col-center'>
+            {/* NOTIFICATIONS BUTTON */}
+            <button className='w-8 h-8 rounded-full bg-transparent hover:bg-hover_bg overflow-hidden hidden md:f-col-center'>
               <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" className='h-6 w-6'><path d="M10 20h4c0 1.1-.9 2-2 2s-2-.9-2-2zm10-2.65V19H4v-1.65l2-1.88v-5.15C6 7.4 7.56 5.1 10 4.34v-.38c0-1.42 1.49-2.5 2.99-1.76.65.32 1.01 1.03 1.01 1.76v.39c2.44.75 4 3.06 4 5.98v5.15l2 1.87zm-1 .42-2-1.88v-5.47c0-2.47-1.19-4.36-3.13-5.1-1.26-.53-2.64-.5-3.84.03C8.15 6.11 7 7.99 7 10.42v5.47l-2 1.88V18h14v-.23z"></path></svg>
             </button>
           </div>
+          {/* USER BUTTON */}
           <button className='w-8 h-8 rounded-full bg-transparent hover:bg-hover_bg overflow-hidden'>
-            <img src="https://via.placeholder.com/88" alt="" className='' />
-            {/* <img src={user} alt="" className='' /> */}
+            {/* <img src="https://via.placeholder.com/88" alt="" className='' /> */}
+            <img src={user} alt="" className='' />
           </button>
 
         </div>
